@@ -1,4 +1,4 @@
-<div align="center">🩺 MediRAG AI
+🩺 MediRAG AI
 Clinical Guideline Intelligence Platform
 Ask questions about clinical guideline PDFs with retrieval-augmented generation, inspect evidence, and compare PDF parsers.
 
@@ -20,14 +20,14 @@ MediRAG AI is a full-stack application for exploring clinical guideline document
 
 The project also includes PDF text extraction and cleaning, plus a two-parser comparison workflow using PyMuPDF and pdfplumber to investigate common extraction issues.
 Features
-- Clinical PDF upload  ingest searchable guideline documents.
-- Semantic retrieval  chunk content, create embeddings with Sentence Transformers, and search with ChromaDB.
-- Evidence-grounded Q&A  use retrieved passages as context for OpenRouter-hosted models.
-- Source references  display retrieved evidence when available.
-- RAG vs. baseline comparison  contrast grounded and ungrounded responses.
-- PDF parser comparison  compare PyMuPDF and pdfplumber output.
-- Text cleaning  investigate repeated headers and footers, page numbers, line wraps, hyphenation, multi-column reading order, and tables.
-- React dashboard  upload, manage, and query documents.
+- Clinical PDF upload — ingest searchable guideline documents.
+- Semantic retrieval — chunk content, create embeddings with Sentence Transformers, and search with ChromaDB.
+- Evidence-grounded Q&A — use retrieved passages as context for OpenRouter-hosted models.
+- Source references — display retrieved evidence when available.
+- RAG vs. baseline comparison — contrast grounded and ungrounded responses.
+- PDF parser comparison — compare PyMuPDF and pdfplumber output.
+- Text cleaning — investigate repeated headers and footers, page numbers, line wraps, hyphenation, multi-column reading order, and tables.
+- React dashboard — upload, manage, and query documents.
 Verification note: Backend /api/health returned HTTP 200 with the expected CORS header during local testing. Full PDF indexing, live LLM generation, frontend build, and parser-quality evaluation have not yet been independently verified end to end.
 Tech Stack
 Layer	Technologies
@@ -161,3 +161,7 @@ Security & Limitations
 - Do not upload confidential or patient-identifying records without an appropriate security and compliance review.
 - LLM answers can be incomplete or incorrect even with retrieval.
 - An OpenRouter API key is required for live model requests.
+Contributing
+Issues and pull requests are welcome. Include reproduction steps, relevant logs with secrets removed, and expected behavior.
+License
+No license has been selected yet. Add a LICENSE file before declaring an open-source license or using a license badge that implies one.
