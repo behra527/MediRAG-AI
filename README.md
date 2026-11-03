@@ -1,5 +1,5 @@
 
-# 🏥 MediRAG AI
+#  MediRAG AI
 
 ### Clinical Guideline Intelligence Platform
 
@@ -18,7 +18,7 @@
 
 ---
 
-## 📌 Overview
+##  Overview
 
 MediRAG AI is an AI-powered clinical guideline intelligence platform that combines document processing, semantic search, and large language models.
 
@@ -32,9 +32,9 @@ The project also explores PDF text extraction, text cleaning, parser comparison,
 
 > **Disclaimer:** MediRAG AI is intended for educational and research purposes only. It is not a medical device and should not replace professional clinical judgment.
 
----
 
-## 🚀 Key Features
+
+##  Key Features
 
 - **PDF Upload:** Upload searchable clinical guideline documents.
 - **Text Extraction:** Extract content from PDF documents using Python libraries.
@@ -48,9 +48,9 @@ The project also explores PDF text extraction, text cleaning, parser comparison,
 - **PDF Parser Comparison:** Compare PyMuPDF and pdfplumber extraction.
 - **SaaS-Style Dashboard:** React-based interface for document management and AI interaction.
 
----
 
-## 🏗️ System Architecture
+
+##  System Architecture
 
 ```mermaid
 flowchart TD
@@ -70,9 +70,9 @@ flowchart TD
     L --> M[Parser Comparison]
 ```
 
----
 
-## 🛠️ Technology Stack
+
+##  Technology Stack
 
 | Category | Technology |
 |---|---|
@@ -87,9 +87,9 @@ flowchart TD
 | Testing | pytest |
 | Development Tools | VS Code, Git, GitHub |
 
----
 
-## 🧠 How RAG Works
+
+##  How RAG Works
 
 MediRAG AI follows a five-step Retrieval-Augmented Generation pipeline.
 
@@ -123,9 +123,9 @@ The language model generates a response using the retrieved context.
 
 The application is designed to display supporting source evidence when available.
 
----
 
-## 📄 PDF Text Extraction and Cleaning
+
+##  PDF Text Extraction and Cleaning
 
 Clinical guideline PDFs often contain complex layouts that make text extraction difficult.
 
@@ -165,9 +165,9 @@ The project includes a workflow for comparing the output of both libraries on th
 
 **Note:** Actual parser performance must be measured using the same real, publicly available clinical guideline PDF. The table above does not represent completed benchmark results.
 
----
 
-## 📂 Project Structure
+
+##  Project Structure
 
 The main application follows a frontend and backend architecture.
 
@@ -196,9 +196,9 @@ MediRAG-AI/
 
 The exact frontend directory may differ when using the separately packaged SaaS frontend.
 
----
 
-## ⚙️ Installation and Setup
+
+##  Installation and Setup
 
 ### Prerequisites
 
@@ -306,9 +306,9 @@ http://127.0.0.1:5173
 
 If using the separately packaged SaaS frontend, follow its included setup instructions.
 
----
 
-## 🔌 API Endpoints
+
+##  API Endpoints
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -322,9 +322,9 @@ If using the separately packaged SaaS frontend, follow its included setup instru
 
 Detailed API request formats are available through FastAPI Swagger documentation.
 
----
 
-## 🧪 Testing
+
+##  Testing
 
 ### Backend Health Check
 
@@ -366,9 +366,9 @@ npm run build
 - Live LLM responses: Pending verification
 - Frontend production build: Pending verification
 
----
 
-## 📊 RAG vs Non-RAG Comparison
+
+##  RAG vs Non-RAG Comparison
 
 One of the main objectives of MediRAG AI is to investigate whether retrieval improves the reliability of language model responses.
 
@@ -390,9 +390,9 @@ The system retrieves relevant guideline passages and provides them to the langua
 
 This comparison helps identify the benefits and limitations of retrieval-augmented generation.
 
----
 
-## 🗺️ Development Roadmap
+
+##  Development Roadmap
 
 - [x] Plan the RAG architecture
 - [x] Create the FastAPI backend
@@ -413,9 +413,9 @@ This comparison helps identify the benefits and limitations of retrieval-augment
 - [ ] Configure GitHub Actions CI/CD
 - [ ] Prepare production deployment
 
----
 
-## 🔐 Security and Limitations
+
+##  Security and Limitations
 
 MediRAG AI is currently a development prototype.
 
@@ -429,9 +429,9 @@ Important limitations:
 - Retrieved evidence should be checked against the original clinical guideline.
 - Production security, monitoring, and compliance requirements still need to be addressed.
 
----
 
-## 🎯 Project Objectives
+
+##  Project Objectives
 
 The main objectives of this project are:
 
@@ -446,16 +446,3 @@ The main objectives of this project are:
 9. Develop a modern full-stack AI application.
 10. Extend the prototype toward a scalable SaaS architecture.
 
----
-
-## 📜 License
-
-No open-source license has been added yet. All rights remain reserved unless a license is explicitly provided.
-
----
-
-## ⭐ Support
-
-If you find this project useful, consider giving the repository a star.
-
-**MediRAG AI — Building more transparent and evidence-grounded AI systems.**
