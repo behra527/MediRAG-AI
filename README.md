@@ -72,32 +72,3 @@ flowchart TD
     I --> J[Answer + Retrieved Evidence]
     J --> A
     C --> K[PyMuPDF vs pdfplumber Comparison]
-Getting StartedPrerequisitesPython 3.10 or newer (use a version supported by installed dependencies)Node.js and npmAn OpenRouter API Key for LLM requests1. Clone the RepositoryBashgit clone [https://github.com/YOUR_USERNAME/MediRAG-AI.git](https://github.com/YOUR_USERNAME/MediRAG-AI.git)
-cd MediRAG-AI
-Replace YOUR_USERNAME with your GitHub username. The commands below assume the repository contains backend/, frontend/, and .env.example at its root.2. Configure EnvironmentCopy the example environment file to .env in the project root:Windows PowerShell:PowerShellCopy-Item .env.example .env
-macOS / Linux:Bashcp .env.example .env
-Edit .env:Code snippetOPENROUTER_API_KEY=your_openrouter_api_key
-OPENROUTER_MODEL=openai/gpt-4o-mini
-OPENROUTER_BASE_URL=[https://openrouter.ai/api/v1](https://openrouter.ai/api/v1)
-CORS_ORIGINS=[http://127.0.0.1:5173](http://127.0.0.1:5173),http://localhost:5173
-MAX_UPLOAD_MB=15
-Warning: Never commit .env, API keys, or patient-identifying data to GitHub.3. Start the BackendWindows PowerShell:PowerShellcd backend
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-python -m uvicorn app.main:app --host 127.0.0.1 --port 8001 --reload
-macOS / Linux:Bashcd backend
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-python -m uvicorn app.main:app --host 127.0.0.1 --port 8001 --reload
-Backend URL: http://127.0.0.1:8001API Documentation: http://127.0.0.1:8001/docs4. Start the FrontendOpen another terminal from the repository root:Bashcd frontend
-npm install
-Create frontend/.env with:Code snippetVITE_API_URL=[http://127.0.0.1:8001](http://127.0.0.1:8001)
-Then start the development server:Bashnpm run dev
-Frontend URL: http://127.0.0.1:5173If using the separately packaged SaaS frontend, use that folder instead of frontend/ and follow its bundled README.API EndpointsMethodEndpointPurposeGET/api/healthService health and model configurationGET/api/documentsList indexed documentsDELETE/api/documents/{document_id}Remove a documentPOST/api/uploadUpload and ingest PDFPOST/api/chatRAG question answeringPOST/api/compareCompare baseline and RAG responsesPOST/api/v1/parse-and-cleanPDF extraction and cleaning workflowExplore detailed request formats in /docs on your running backend.PDF Parsing ExperimentThe PDF extraction task is to inspect the same publicly available clinical guideline PDF with at least two parsers:PyMuPDF — extract text and inspect page-level reading order.pdfplumber — extract text and inspect layout and table behavior.Compare raw output for repeated headers/footers, page numbers, broken line wraps, hyphenated words, multi-column layout, and tables.Record findings in a comparison table, with representative excerpts and page numbers.Clean extracted text, then evaluate whether retrieval improves.CriterionPyMuPDFpdfplumberHeader/footer repetitionTo evaluateTo evaluatePage numbersTo evaluateTo evaluateBroken line wrapsTo evaluateTo evaluateHyphenated wordsTo evaluateTo evaluateMulti-column orderTo evaluateTo evaluateTablesTo evaluateTo evaluateDo not treat this as a completed benchmark: measured results must come from actual extraction of the same real, publicly available PDF.TestingBackend Health Check:Bashcurl [http://127.0.0.1:8001/api/health](http://127.0.0.1:8001/api/health)
-Run Backend Tests:Bashcd backend
-python -m pytest -q
-Build Frontend:Bashcd frontend
-npm run build
-Roadmap[x] FastAPI service and health endpoint[x] Local CORS configuration verified[x] React frontend code prepared[x] PDF parser comparison workflow implemented in code[ ] Benchmark two parsers on a real public clinical guideline and document findings[ ] Verify PDF upload, embedding, retrieval, and citations end to end[ ] Verify frontend production build[ ] Add persistent chat history[ ] Add authentication, organization workspaces, and document-level permissions[ ] Add automated RAG evaluation metrics and CISecurity & LimitationsThe current application is a development prototype, not a production multi-tenant SaaS.Do not upload confidential or patient-identifying records without an appropriate security and compliance review.LLM answers can be incomplete or incorrect even with retrieval.An OpenRouter API key is required for live model requests.
